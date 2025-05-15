@@ -1,0 +1,14 @@
+It may be necessary to edit the register table the Watlow F4T class uses to command the device. If multiple commands fall under the same class and parameter name, it is necessary to make the commands unique. To do this the parameter name should be changed to something more specific so that the class-parameter combination is unique to only one command. These instructions detail how to do this.
+
+1. Copy the current Standard Bus Registers.csv file and paste it in the old register tables folder. Append the date to the end of the copied file name.
+2. Open the F4T Register List.xlsx file and navigate to the LabVIEW sheet.
+3. This is the table to edit. Only the Parameter Name column should need and edit. Find the commands with identical class-parameter combinations and change the parameter name to    something unique.
+4. Note your edits in the F4T Register List Edits.txt file.
+5. Sort the sheet by parameter name in A->Z order, then sort the sheet by class name in A->Z order.
+6. Copy the entire sheet and paste it in a new .csv file. Then save this new .csv over the old standard bus registers.csv file
+7. Open and run the Build Standard Bus Register Look Up Table--VI to build a new .INI file the Register LUT is stored in
+8. Open and run the Build Standard Bus Class and Parameter Names--VI
+9. Open the Standard Bus Class Names--Enum control and drag and drop the Class Names control from the Build Standard Bus Class Name and Parameter Name
+10. Change the new control to an enum, and delete the old control. Then save the .ctl
+11. Repeat steps 8 and 9 for the Standard Bus Parameter Names--Enum
+12. Open the Get Command Information--SubVI and verify that all commands are still valid with the new class and parameter name enum controls

@@ -1,0 +1,6 @@
+Step Type	Settings
+Init Hardware	
+Init Serial	
+Charge	Type = Dual Bay Supercharger
+Set Temp	Wait = True
+Discharge	Type = CCD, I = 20
